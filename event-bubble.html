@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <h1>Exploring event bubble!</h1>
+    <section id="container">
+        <ul id="item-list">
+            <li id="item-1">Lorem, ipsum.</li>
+            <li id="item-2">Optio, ad?</li>
+            <li id="item-3">Esse, amet?</li>
+            <li id="item-4">Ea, velit.</li>
+            <li id="item-5">Fugit, accusamus.</li>
+            <li id="item-6">Quo, nam.</li>
+        </ul>
+    </section>
+    <script>
+        document.getElementById('item-2').addEventListener('click', function(event){
+            console.log('item-2 1 handeler');
+            event.stopImmediatePropagation();
+        })
+        document.getElementById('item-2').addEventListener('click', function(event){
+            console.log('item-2 2 handeler');
+           
+        })
+        document.getElementById('item-2').addEventListener('click', function(event){
+            console.log('item-2 3 handeler');
+            
+        })
+        document.getElementById('item-list').addEventListener('click', function(){
+            console.log('item-list handle in the field');
+        })
+        document.getElementById('container').addEventListener('click', function(){
+            console.log('container handled')
+        })
+        document.getElementById('body').addEventListener('click', function(){
+            console.log('body handeler');
+        })
+    </script>
+</body>
+</html>

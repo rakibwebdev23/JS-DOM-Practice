@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatiable" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete disable enable </title>
+</head>
+<body>
+    <h1 id="text-delete">Delete the topics</h1>
+    <input id="delete-confirm" type="text" placeholder="delete here">
+    <button id="btn-delete" disabled >Delete</button>
+    <script>
+        // step 1
+        document.getElementById('btn-delete').addEventListener('click', function(){
+            const textDelete = document.getElementById('text-delete');
+            textDelete.style.display = 'none';
+        })
+        // step 2: final
+        document.getElementById('delete-confirm').addEventListener('keyup', function(event){
+            const text = event.target.value;
+            const btnDelete = document.getElementById('btn-delete');
+            if(text === 'delete'){
+                btnDelete.removeAttribute('disabled');
+            }
+            else{
+                btnDelete.setAttribute('disabled');
+            }
+            
+        })
+    </script>
+</body>
+</html>
