@@ -1,0 +1,25 @@
+h1{
+    color: tomato;
+    font-size: 40px;
+    text-align: center;
+    background-color: lightblue;
+    font-weight: 700;
+}
+body{
+    margin: 0;
+}
+button{
+    color: tomato;
+    padding: 20px;
+    margin: 30px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: lightgray;
+}
+#buton{
+    display: flex;
+    justify-content: space-around;
+
+}
